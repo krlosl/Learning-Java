@@ -2,17 +2,11 @@ package libreria; //está en la carpeta libreria
 import java.util.Scanner;
 
 public class FNumDaw {
-    public static int potencia (int base, int exponente) {
-        int resultado;
-
-        resultado = base;
-
-        for(int i = 1; i < exponente; i++) {
-            resultado = resultado*base;
-        }
-        return resultado;
+    public static double potencia (double base, int exponente) {
+       double resultado = Math.pow(base, exponente);
+       return resultado;
     }
-    public static int cuantosdigitos (int digitos) {
+    public static int cuantosDigitos (int digitos) {
         int resultado1;
         int cant = 0;
 
@@ -22,27 +16,68 @@ public class FNumDaw {
         }
         return cant;
     }
-    public static boolean primos (int primo) {
-        int i = 1;
-        int cont = 0;
-        int n;
-
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Introduce un número");
-        n = sc.nextInt();
-
-        while (i <= n){
-            if((n % i) == 0){
-                cont++;
-            }
-            i++;
-        }    
-        if (cont <= 2){
+    public static int voltea(int num) {
+        String StringNum = Integer.toString(num);
+        String StringNumInvert = new StringBuilder(StringNum).reverse().toString();
+        int numeroinvertido = Integer.parseInt(StringNumInvert);
+        return numeroinvertido;
+    }
+    public static boolean esCapicua (int num) {
+        int numInvert = voltea(num);
+        if (numInvert == num) {
             return true;
-        }else{
+        }else {
             return false;
         }
     }
-}
+    public static boolean esPrimo (int n) {
 
+        Scanner sc = new Scanner(System.in);
+        
+        for (int i = n -1; i > 1; i--) {
+            if (n % i == 0) {
+                return false;
+            }
+        }return true;
+    }
+    public static int siguientePrimo (int prim) {
+        prim++;
+        while (true) {
+            esPrimo(prim);
+            if (esPrimo(prim)) {
+                return prim;
+            }else {
+                prim++;
+            }
+        } 
+    }
+    public static int anteriorPrimo (int antprim) {
+        antprim--;
+        while (true) {
+            esPrimo(antprim);
+            if (esPrimo(antprim)) {
+                return antprim;
+            }else {
+                antprim--;
+            }
+        }
+    }
+    public static char digitoN (int digito, int posicion) { 
+        String numerodigito = String.valueOf(digito);
+
+        char[] algo = numerodigito.toCharArray();
+
+        return algo[posicion];
+    }
+    public static String parteNumero (int numero, int inicio, int fin) {
+        String numeroStr = String.valueOf(numero);
+
+        if (inicio >= 0 && fin < numeroString.length() && inicio <= fin) {
+            String subcadena = numeroString.substring(inicio, fin + 1);
+        }
+        return subcadena;
+    }
+    public static String pegaNumeros (int num1, int num2) {
+        return num1 + "" + num2;
+    }  
+}
