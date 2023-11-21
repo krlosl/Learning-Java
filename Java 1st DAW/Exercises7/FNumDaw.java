@@ -25,11 +25,12 @@ public class FNumDaw {
     }
     public static boolean esCapicua (int num) {
         int numInvert = voltea(num);
+        boolean es = true;
         if (numInvert == num) {
-            return true;
+            es = true;
         }else {
-            return false;
-        }
+            es = false;
+        } return es;
     }
     public static boolean esPrimo (int n) {
 
@@ -93,17 +94,19 @@ public class FNumDaw {
             return true;
         }return false;
     }
-    public static void mil () {
-        for (int i = 1; i < 1001; i = siguientePrimo(i)) {
+    public static int mil (int i) {
+        for (i = 1; i < 1001; i = siguientePrimo(i)) {
             System.out.println(i);
         }
+        return i;
     }
-    public static void capicua () {
-        for (int i = 1000; i <= 9999; i++) {
-            if (esCapicua(i)) {
-                System.out.println(i);
+    public static int capicua (int c) {
+        for (c = 1000; c <= 9999; c++) {
+            if (esCapicua(c)) {
+                System.out.println(c);
             }
         }
+        return c;
     }
     public static void generaArrayInt (int tamanyo, int minimo, int maximo) {
         int[] aleatorio = new int[tamanyo];
@@ -111,29 +114,28 @@ public class FNumDaw {
         for (int i = 0; i < tamanyo; i++) {
             int j = random.nextInt(maximo - minimo + 1) + minimo;
             aleatorio[i] = j;
-            System.out.println(aleatorio[i]);
+            int total = aleatorio[i];
+            System.out.println(total);
         }
+        return total;
     }
-    public static void minimoArrayInt (int[] a) {
+    public static int minimoArrayInt (int[] a) {
         int numero = 2147483647;
         for (int x = 0; x < a.length; x++) {
             if (a[x] < numero) {
                 numero = a[x];
             }
         }
-        System.out.println(numero);
+        return numero;
     }
-    public static void maximoArrayInt (int[] b) {
+    public static int maximoArrayInt (int[] b) {
         int numero = 2147483647;
         for (int x = 0; x < b.length; x++) {
             if (b[x] < numero) {
                 numero = b[x];
             }
         }
-        System.out.println(numero);
-    }
-    public static void mediaArrayInt (int[] c, int media) {
-        
+        return numero;
     }
     public static int posicionArray (int[] d, int nump) {
         System.out.println(d[nump]);
