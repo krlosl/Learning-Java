@@ -1,4 +1,4 @@
-package Exercises7; //está en la carpeta libreria
+package libreria; //está en la carpeta Exercises7
 import java.util.Random;
 import java.util.Scanner;
 
@@ -131,5 +131,12 @@ public class FNumDaw {
             }
         }
         System.out.println(numero);
+    }
+    public static void mediaArrayInt (int[] c, int media) {
+        
+    }
+    public static int posicionArray (int[] d, int nump) {
+        System.out.println(d[nump]);
+        return nump;
     }
 }
