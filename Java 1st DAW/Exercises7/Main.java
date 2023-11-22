@@ -3,8 +3,8 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
-        int elegir;
+    public static void main(String[] args) { //falta kaprekar, los de acepta el reto, el número 22, 23 y 21
+        int F;
         boolean seguir = true;
 
         Scanner sc = new Scanner(System.in);
@@ -37,7 +37,7 @@ public class Main {
 
         while (seguir) {
             System.out.println("Cuál de todos quieres probar?");
-            elegir = sc.nextInt();
+            int elegir = sc.nextInt();
 
             switch(elegir) {
 
@@ -50,7 +50,8 @@ public class Main {
                     System.out.println(FNumDaw.potencia(base, exponente));
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 2:
 
@@ -60,7 +61,8 @@ public class Main {
                     System.out.println(FNumDaw.cuantosDigitos(cant));
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 3:
 
@@ -69,8 +71,8 @@ public class Main {
 
                     System.out.println(FNumDaw.voltea(numeroinvertido));
 
-                    
-                break;
+
+                    break;
 
                 case 4:
 
@@ -80,7 +82,8 @@ public class Main {
                     System.out.println(FNumDaw.esCapicua(num));
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 5:
 
@@ -90,7 +93,8 @@ public class Main {
                     System.out.println(FNumDaw.esPrimo(n));
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 6:
 
@@ -100,7 +104,8 @@ public class Main {
                     System.out.println(FNumDaw.siguientePrimo(prim));
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 7:
 
@@ -110,7 +115,8 @@ public class Main {
                     System.out.println(FNumDaw.anteriorPrimo(antprim));
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 8:
 
@@ -122,7 +128,8 @@ public class Main {
 
                     System.out.println(FNumDaw.digitoN(digito, posicion));
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 10:
 
@@ -133,9 +140,10 @@ public class Main {
                     System.out.print("Dime el final del trozo:");
                     int fin = sc.nextInt();
 
-                    System.out.println(FNumDaw.parteNumero(numero, inicio,fin));
+                    System.out.println(FNumDaw.parteNumero(numero, inicio, fin));
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 11:
 
@@ -147,33 +155,39 @@ public class Main {
                     System.out.println(FNumDaw.pegaNumeros(num1, num2));
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 12:
 
                     System.out.print("Dime un número que quieras saber si es de kaprekar: ");
                     int kaprekar = sc.nextInt();
 
-                    System.out.println(FNumDaw.kaprekar(kaprekar));
+                    FNumDaw.kaprekar(kaprekar);
 
                     System.exit(0);
-                break;
-                
-                case 13:
-                    System.out.println("Te voy a mostrar los numeros primos del 1 al 1000: ");
-                    System.out.print("Pulsa una tecla para continuar... ");
-                    int i = sc.nextInt();
-                    System.out.println(FNumDaw.mil(i));
-                    System.exit(0);
-                break;
 
-                case 14:
-                    
-                    System.out.println("Te voy a mostrar los numeros capicua del 1000 al 9999: ");
-                    System.out.print("Pulsa una tecla para continuar... ");
-                    System.out.println(FNumDaw.capicua(c));
-                    System.exit(0);
-                break;
+                    break;
+
+                //case 13:
+//
+                //    System.out.println("Te voy a mostrar los numeros primos del 1 al 1000: ");
+                //    
+//
+                //    FNumDaw.mil(int i);
+                //    System.exit(0);
+//
+                //break;
+
+                //case 14:
+                //    
+                //    System.out.println("Te voy a mostrar los numeros capicua del 1000 al 9999: ");
+                //    int dentro = sc.nextInt();
+//
+                //    System.out.println(FNumDaw.capicua());
+                //    System.exit(0);
+//
+                //break;
 
                 case 17:
 
@@ -183,10 +197,16 @@ public class Main {
                     int minimo = sc.nextInt();
                     System.out.println("Dime el tamanyo maximo del array: ");
                     int maximo = sc.nextInt();
-
-                    FNumDaw.generaArrayInt(tamanyo, minimo, maximo);
+                    System.out.println("Dime que numero quieres saber si está dentro del array: ");
+                    int dentro = sc.nextInt();
+                    int[] temp = FNumDaw.generaArrayInt(tamanyo, minimo, maximo);
+                    for (int i = 0; i < temp.length; i++) {
+                        System.out.println(temp[i]);
+                    }
+                    System.out.println(FNumDaw.estaEnArrayInt(tamanyo, dentro));
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 18:
 
@@ -198,15 +218,16 @@ public class Main {
 
                         a[x] = sc.nextInt();
                     }
-                    FNumDaw.minimoArrayInt(a);
+                    System.out.println(FNumDaw.minimoArrayInt(a));
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 19:
 
                     System.out.println("Dime de que tamanyo quieres el array: ");
                     int tamanyo2 = sc.nextInt();
-                    int[] b = new int [tamanyo2];
+                    int[] b = new int[tamanyo2];
                     for (int x = 0; x < tamanyo2; x++) {
                         System.out.println("Dime el caracter " + x + " del array");
 
@@ -214,23 +235,42 @@ public class Main {
                     }
                     System.out.println(tamanyo2);
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 20:
 
                     System.out.println("");
 
-                    
 
                     System.exit(0);
-                break;
+
+                    break;
 
                 case 21:
+
+                    System.out.println("Dime de que tamanyo quieres que sea el array: ");
+                    tamanyo = sc.nextInt();
+                    System.out.println("Dime el minimo del array: ");
+                    minimo = sc.nextInt();
+                    System.out.println("Dime el maximo del array: ");
+                    maximo = sc.nextInt();
+                    System.out.println("Escribe el número que quieras saber si está dentro del array: ");
+                    dentro = sc.nextInt();
+
+                    int[] temp2 = FNumDaw.generaArrayInt(tamanyo, minimo, maximo);
+                    System.out.println(FNumDaw.estaEnArrayInt(tamanyo, dentro));
+
+                    System.exit(0);
+
+                    break;
+
+                case 22:
 
                     System.out.println("Dime de que tamanyo quieres el array: ");
                     int tamanyo4 = sc.nextInt();
                     int[] d = new int[tamanyo4];
-                    for ( i = 0; i < tamanyo4; i++) {
+                    for (int i = 0; i < tamanyo4; i++) {
                         System.out.println("Dime el caracter " + i + " del array");
 
                         d[i] = sc.nextInt();
@@ -240,9 +280,15 @@ public class Main {
                     int nump = sc.nextInt();
                     System.out.println(d[nump]);
                     System.exit(0);
-                break; 
+
+                    break;
+
+                case 23:
+                    
+                break;
 
             }
         }
     }
 }
+
