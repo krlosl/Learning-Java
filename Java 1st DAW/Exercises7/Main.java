@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) { //falta kaprekar, los de acepta el reto, el número 22, 23 y 21
+    public static void main(String[] args) { //falta 20, 21, 23 y kaprekar
         int F;
         boolean seguir = true;
 
@@ -197,13 +197,11 @@ public class Main {
                     int minimo = sc.nextInt();
                     System.out.println("Dime el tamanyo maximo del array: ");
                     int maximo = sc.nextInt();
-                    System.out.println("Dime que numero quieres saber si está dentro del array: ");
-                    int dentro = sc.nextInt();
                     int[] temp = FNumDaw.generaArrayInt(tamanyo, minimo, maximo);
                     for (int i = 0; i < temp.length; i++) {
                         System.out.println(temp[i]);
                     }
-                    System.out.println(FNumDaw.estaEnArrayInt(tamanyo, dentro));
+                    System.out.println(FNumDaw.generaArrayInt(tamanyo, minimo, maximo));
                     System.exit(0);
 
                     break;
@@ -256,7 +254,7 @@ public class Main {
                     System.out.println("Dime el maximo del array: ");
                     maximo = sc.nextInt();
                     System.out.println("Escribe el número que quieras saber si está dentro del array: ");
-                    dentro = sc.nextInt();
+                    int dentro = sc.nextInt();
 
                     int[] temp2 = FNumDaw.generaArrayInt(tamanyo, minimo, maximo);
                     System.out.println(FNumDaw.estaEnArrayInt(tamanyo, dentro));
