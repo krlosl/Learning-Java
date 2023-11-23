@@ -1,4 +1,4 @@
-package libreria; //está en la carpeta Exercises7
+package libreria; //está en la carpeta libreria
 import java.util.Random;
 import java.util.Scanner;
 
@@ -135,24 +135,50 @@ public class FNumDaw {
         return numero;
     }
 
-    public static boolean estaEnArrayInt (int tamanyo, int dentro) { //falta acabarlo
-        Random random = new Random();
+    public static int mediaArrayInt (int tamanyo3) {
+        int[] d = new int[tamanyo3];
+        int suma = 0;
+        Scanner sc = new Scanner(System.in);
+        for (int z = 0; z < d.length; z++) {
+            System.out.println("Dime la posicion " + z + " del array:");
+            d[z] = sc.nextInt();
+            suma = suma + d[z];
+        }
+        return suma / d.length;
+    }
+
+
+    public static boolean estaEnArrayInt (int tamanyo, int dentro) {
         int[] c = new int[tamanyo];
         int i;
-        int aleatorio = (int) (Math.random()* tamanyo) +1;
-
         for (i = 0; i < c.length; i++) {
-            c[i] = (int) (Math.random()* tamanyo) +1;
+            c[i] = (int) (Math.random() * tamanyo);
         }
-        int pasar = c[i];
+        int pasar = c[i -1];
         if (pasar == dentro) {
             return true;
         }
         return false;
     }
 
-    public static int posicionArray (int[] d, int nump) {
-        System.out.println(d[nump]);
+    public static int posicionArray (int[] c, int nump) {
+        System.out.println(c[nump]);
         return nump;
+    }
+
+    public static int[] volteaArrayInt (int[] d) {
+        int inicio = 0;
+        int fin = d.length - 1;
+
+        while (inicio < fin) {
+
+            int temp = d[inicio];
+            d[inicio] = d[fin];
+            d[fin] = temp;
+
+            inicio++;
+            fin--;
+        }
+        return d;
     }
 }
