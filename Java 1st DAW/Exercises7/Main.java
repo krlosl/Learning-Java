@@ -1,7 +1,4 @@
-import com.sun.security.jgss.GSSUtil;
 import libreria.FNumDaw;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.Arrays;
 
