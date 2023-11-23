@@ -1,9 +1,10 @@
+
 import libreria.FNumDaw;
 import java.util.Scanner;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) { //falta y kaprekar
+    public static void main(String[] args) {
         boolean seguir = true;
 
         Scanner sc = new Scanner(System.in);
@@ -130,6 +131,19 @@ public class Main {
 
                 break;
 
+                case 9:
+
+                    System.out.println("Dime el numero:");
+                    int numeroasacar = sc.nextInt();
+                    System.out.println("Dime la posicion que quieres sacar:");
+                    int posicion1 = sc.nextInt();
+
+                    System.out.println(FNumDaw.posicionDeDigito(numeroasacar, posicion1));
+
+                    System.exit(0);
+
+                break;
+
                 case 10:
 
                     System.out.print("Dime el número al que quieres sacarle un trozo:");
@@ -162,7 +176,7 @@ public class Main {
                     System.out.print("Dime un número que quieras saber si es de kaprekar: ");
                     int kaprekar = sc.nextInt();
 
-                    FNumDaw.kaprekar(kaprekar);
+                    System.out.println(FNumDaw.kaprekar(kaprekar));
 
                     System.exit(0);
 
@@ -171,7 +185,7 @@ public class Main {
                 //case 13:
 //
                 //    System.out.println("Te voy a mostrar los numeros primos del 1 al 1000: ");
-                //    
+                //
 //
                 //    FNumDaw.mil(int i);
                 //    System.exit(0);
@@ -179,7 +193,7 @@ public class Main {
                 //break;
 
                 //case 14:
-                //    
+                //
                 //    System.out.println("Te voy a mostrar los numeros capicua del 1000 al 9999: ");
                 //    int dentro = sc.nextInt();
 //
@@ -193,6 +207,8 @@ public class Main {
                     System.out.println("Dime el numero que quieras saber las vueltas para llegar a 6174:");
                     int numkaprekar = sc.nextInt();
 
+
+                break;
 
                 case 17:
 
@@ -282,22 +298,21 @@ public class Main {
 
                 break;
 
-               case 23:
+                case 23:
 
-                   System.out.println("Dime de que tamanyo quieres el array:");
-                   int tamanyo5 = sc.nextInt();
-                   int[] d = new int[tamanyo5];
-                   for (int j = 0; j < tamanyo5; j++) {
-                       System.out.println("Dime el caracter " + j + " del array:");
+                    System.out.println("Dime de que tamanyo quieres el array:");
+                    int tamanyo5 = sc.nextInt();
+                    int[] d = new int[tamanyo5];
+                    for (int j = 0; j < tamanyo5; j++) {
+                        System.out.println("Dime el caracter " + j + " del array:");
 
-                       d[j] = sc.nextInt();
-                   }
+                        d[j] = sc.nextInt();
+                    }
 
-                   System.out.println(Arrays.toString(FNumDaw.volteaArrayInt(d)));
-                   System.exit(0);
+                    System.out.println(Arrays.toString(FNumDaw.volteaArrayInt(d)));
+                    System.exit(0);
 
-               break;
-
+                break;
             }
         }
     }
