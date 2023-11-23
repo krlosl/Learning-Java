@@ -9,7 +9,6 @@ public class FNumDaw {
     }
     
     public static int cuantosDigitos (int digitos) {
-        int resultado1;
         int cant = 0;
 
         while (digitos > 0){
@@ -36,10 +35,7 @@ public class FNumDaw {
         } return es;
     }
 
-    public static boolean esPrimo (int n) {
-
-        Scanner sc = new Scanner(System.in);
-        
+    public static boolean esPrimo (int n) {      
         for (int i = n -1; i > 1; i--) {
             if (n % i == 0) {
                 return false;
@@ -71,12 +67,23 @@ public class FNumDaw {
         }
     }
 
-    public static char digitoN (int digito, int posicion) { 
+    public static char digitoN (int digito, int posicion) {
         String numerodigito = String.valueOf(digito);
 
         char[] algo = numerodigito.toCharArray();
 
         return algo[posicion];
+    }
+
+    public static String posicionDeDigito(int numero, int posicion1) {
+        String temp = Integer.toString(numero);
+        char[] cadena = temp.toCharArray();
+        for (int x = 0; x < cadena.length; x++) {
+            if (cadena[x] == Integer.toString(posicion1).charAt(0)) {
+                return "La primera ocurrencia de " + posicion1 + " se encuentra en la posicion: " + x;
+            }
+        }
+        return "-1";
     }
 
     public static StringBuilder parteNumero (int numero, int inicio, int fin) {
@@ -92,15 +99,15 @@ public class FNumDaw {
         return num1 + "" + num2;
     }
 
-    public static boolean kaprekar (int num) { // da error al ejecutar
+    public static boolean kaprekar (int num) {
         int num1 = num * num;
         String mitad = Integer.toString(num1);
-        int longitud = mitad.length() /2 - 1;
+        int longitud = (mitad.length() / 2) - 1;
         int division = mitad.length() - 1;
         StringBuilder mitadizquierda = parteNumero(num1, 0, longitud);
         StringBuilder mitadderecha = parteNumero(num1, longitud + 1, division);
 
-        if (Integer.parseInt(String.valueOf(mitadizquierda)) + Integer.parseInt(String.valueOf(mitadderecha)) == num && mitadizquierda.length() == mitadderecha.length()) {
+        if (Integer.parseInt(String.valueOf(mitadizquierda)) == (Integer.parseInt(String.valueOf(mitadderecha)))) {
             return true;
         }
         return false;
